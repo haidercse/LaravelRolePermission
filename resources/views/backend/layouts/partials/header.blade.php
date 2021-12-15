@@ -8,15 +8,15 @@
                 <span></span>
                 <span></span>
             </div>
-            <div class="search-box pull-left">
+            {{-- <div class="search-box pull-left">
                 <form action="#">
                     <input type="text" name="search" placeholder="Search..." required>
                     <i class="ti-search"></i>
                 </form>
-            </div>
+            </div> --}}
         </div>
         <!-- profile info & task notification -->
-        <div class="col-md-6 col-sm-4 clearfix">
+        {{-- <div class="col-md-6 col-sm-4 clearfix">
             <ul class="notification-area pull-right">
                 <li id="full-view"><i class="ti-fullscreen"></i></li>
                 <li id="full-view-exit"><i class="ti-zoom-out"></i></li>
@@ -161,7 +161,9 @@
                     <i class="ti-settings"></i>
                 </li>
             </ul>
-        </div>
+        </div> --}}
     </div>
 </div>
 <!-- header area end -->
+
+

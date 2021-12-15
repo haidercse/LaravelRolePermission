@@ -33,6 +33,9 @@ Route::group(['prefix'=>'admin'], function(){
 
      //USER
      Route::resource('users', UsersController::class);
+     //USER UPDATE
+     Route::get('/user/update/{id}',[UsersController::class,'updateSingleUser'])->name('update.user.get');
+     Route::post('/user/update/{id}',[UsersController::class,'updateUserPost'])->name('update.user.post');
 
      //ADMIN
      Route::resource('admins', AdminController::class);

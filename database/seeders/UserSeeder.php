@@ -21,11 +21,12 @@ class UserSeeder extends Seeder
                 'name' => 'Shaiful Islam Haider',
                 'email' => 'haider.cse7644@gmail.com',
                 'password'=> Hash::make('01814256957'),
+                'is_superadmin' => 1,
              ]);
             $user->assignRole('super admin');
         }
-        
-        
-       
+
+
+
     }
 }

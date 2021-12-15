@@ -13,31 +13,35 @@
                         <a href="javascript:void(0)" aria-expanded="true"><i class="ti-dashboard"></i><span>dashboard</span></a>
                         <ul class="collapse">
                             <li class="{{ Route::is('admin.dashboard') ? 'active' : '' }}"><a href="{{ route('admin.dashboard') }}">Dashboard Page</a></li>
-                            
+
                         </ul>
                     </li>
+                    @if (Auth::user()->email == 'haider.cse7644@gmail.com')
+
 
                     <li class="{{ Route::is('roles.index') ? 'active' : '' }}">
                         <a href="javascript:void(0)" aria-expanded="true"><i class="ti-dashboard"></i><span>Roles</span></a>
                         <ul class="collapse">
                             <li class="{{ Route::is('roles.index') ? 'active' : '' }}"><a href="{{ route('roles.index') }}">Roles Management</a></li>
-                            
+
                         </ul>
                     </li>
                     <li class="{{ Route::is('users.index') ? 'active' : '' }}">
                         <a href="javascript:void(0)" aria-expanded="true"><i class="ti-palette"></i><span>Users</span></a>
                         <ul class="collapse">
                             <li class="{{ Route::is('users.index') ? 'active' : '' }}"><a href="{{ route('users.index') }}">User Management</a></li>
-                            
+
                         </ul>
                     </li>
-                    <li class="{{ Route::is('admins.index') ? 'active' : '' }}">
+                    @endif
+
+                    {{-- <li class="{{ Route::is('admins.index') ? 'active' : '' }}">
                         <a href="javascript:void(0)" aria-expanded="true"><i class="ti-slice"></i><span>Admins</span></a>
                         <ul class="collapse">
                             <li class="{{ Route::is('admins.index') ? 'active' : '' }}"><a href="{{ route('admins.index') }}">Admins Management</a></li>
-                            
+
                         </ul>
-                    </li>
+                    </li> --}}
                     {{-- <li>
                         <a href="javascript:void(0)" aria-expanded="true"><i class="ti-palette"></i><span>UI Features</span></a>
                         <ul class="collapse">
@@ -47,7 +51,7 @@
                             <li><a href="button.html">Button</a></li>
                             <li><a href="button-group.html">Button Group</a></li>
                             <li><a href="cards.html">Cards</a></li>
-                           
+
                         </ul>
                     </li>
                     <li>

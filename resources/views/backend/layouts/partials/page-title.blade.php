@@ -10,17 +10,18 @@
                 </ul>
             </div>
         </div>
-        <div class="col-sm-6 clearfix">
-            <div class="user-profile pull-right">
-                <img class="avatar user-thumb" src="{{ asset('admin/assets/images/author/avatar.png') }}" alt="avatar">
-                <h4 class="user-name dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->name }} <i class="fa fa-angle-down"></i></h4>
+        <div class="col-sm-6 clearfix" >
+            <div class="user-profile pull-right" style="background: rgb(252, 252, 252)!important;">
+                <img class="avatar user-thumb" src="{{ asset('images/user/'.Auth::user()->image) }}" alt="avatar">
+                <h4 class="user-name dropdown-toggle text-dark" data-toggle="dropdown">{{ Auth::user()->name }} <i class="fa fa-angle-down"></i></h4>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="#">Message</a>
                     <a class="dropdown-item" href="#">Settings</a>
-                    {{-- <a class="dropdown-item" href="#">Log Out</a> --}}
+                    <a class="dropdown-item" href="{{ route('update.user.get',Auth::user()->id) }}">Update Profile</a>
+                    {{-- <a class="dropdown-item" href="#">Log Out</a> --}} 
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
-        
+
                         <button type="submit" class="dropdown-item underline text-sm text-gray-600 hover:text-gray-900">
                             {{ __('Log Out') }}
                         </button>

@@ -13,7 +13,7 @@
 @section('admin-content')
      <div class="container">
          <div class="row">
-             <div class="col-md-10">
+             <div class="col-md-12">
                 <div class="card">
                     @include('backend.layouts.partials.message')
                     <div class="card-header">
@@ -46,7 +46,7 @@
                                         $permissions = App\Models\User::getpermissionsByGroupName($group->name);
                                         $j = 1;
                                     @endphp
-                                    
+
                                     <div class="col-3">
                                         <div class="form-check">
                                             <input type="checkbox" class="form-check-input" id="{{ $i }}Management" value="{{ $group->name }}" onclick="checkPermissionByGroup('role-{{ $i }}-management-checkbox', this)" {{ App\Models\User::roleHasPermissions($role, $permissions) ? 'checked' : '' }}>
@@ -55,7 +55,7 @@
                                     </div>
 
                                     <div class="col-9 role-{{ $i }}-management-checkbox">
-                                       
+
                                         @foreach ($permissions as $permission)
                                             <div class="form-check">
                                                 <input type="checkbox" class="form-check-input" onclick="checkSinglePermission('role-{{ $i }}-management-checkbox', '{{ $i }}Management', {{ count($permissions) }})" name="permissions[]" {{ $role->hasPermissionTo($permission->name) ? 'checked' : '' }} id="checkPermission{{ $permission->id }}" value="{{ $permission->name }}">

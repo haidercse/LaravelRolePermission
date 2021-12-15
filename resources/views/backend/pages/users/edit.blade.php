@@ -13,7 +13,7 @@
 @section('admin-content')
      <div class="container">
          <div class="row">
-             <div class="col-md-10">
+             <div class="col-md-12">
                 <div class="card">
                     @include('backend.layouts.partials.message')
                     <div class="card-header">
@@ -23,7 +23,7 @@
                         <a href="{{ route('users.index') }}" class=" btn btn-warning"><i class="fas fa-long-arrow-alt-right"> Back User List</i></a>
                       </div>
                     <div class="card-body">
-                        <form action="{{ route('users.update',$user->id) }}" method="POST">
+                        <form action="{{ route('users.update',$user->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <div class="form-row">
@@ -43,6 +43,12 @@
                                     <label for="password_confirm">Confirm Password</label>
                                     <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Enter a Confirm Password">
                                 </div>
+                                <div class="form-group col-md-6">
+                                    <label for="image">Old Image</label> <br>
+                                    <img src="{{ asset('images/user/'.$user->image) }}" alt="{{ $user->name }}" width="82" > <br>
+                                    <label for="image">Image</label>
+                                    <input type="file" class="form-control" name="image">
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="role">All User</label>
@@ -60,6 +66,6 @@
              </div>
          </div>
      </div>
-     
-    
+
+
 @endsection

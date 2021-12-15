@@ -7,7 +7,7 @@
 @section('admin-content')
     <div class="container">
         <div class="row">
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <div class="card">
                     @include('backend.layouts.partials.message')
                     <div class="card-header">
@@ -41,7 +41,7 @@
                                         <td>
                                             <a href="{{ route('admins.edit',$admin->id) }}"
                                                 class="btn btn-success"><i class="far fa-edit"> Edit</i></a>
-                                               
+
                                             <a href="#delteModal{{ $admin->id }}" data-toggle="modal"
                                                 class="btn btn-danger"><i class="far fa-trash-alt"> Delete</i></a>
 

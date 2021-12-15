@@ -7,7 +7,7 @@
 @section('admin-content')
     <div class="container">
         <div class="row">
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <div class="card">
                     @include('backend.layouts.partials.message')
                     <div class="card-header">
@@ -38,12 +38,12 @@
                                                 <span class="badge badge-info"> {{ $perm->name }}</span>
                                             @endforeach
                                         </td>
-                                        
+
                                         <td>
                                             @if (Auth::user()->can('roles.create') || Auth::user()->can('roles.delete'))
                                                 <a href="{{ route('roles.edit',$role->id) }}"
                                                     class="btn btn-success"><i class="far fa-edit"> Edit</i></a>
-                                                
+
                                                 <a href="#delteModal{{ $role->id }}" data-toggle="modal"
                                                     class="btn btn-danger"><i class="far fa-trash-alt"> Delete</i></a>
                                             @endif

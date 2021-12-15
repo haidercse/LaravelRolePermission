@@ -16,11 +16,12 @@ class AdminDashboardController extends Controller
         $this->middleware('auth');
     }
 
-   
+
     public function index(){
+
         if (!request()->user()->hasPermissionTo('admin.dashboard') ) {
             return abort(403, 'Unauthoeized access to see the dashboard!');
-          
+
         }
 
         $total_roles = count(Role::select('id')->get());
